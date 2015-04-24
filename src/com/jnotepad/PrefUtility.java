@@ -19,14 +19,19 @@ public class PrefUtility {
     
     Preferences preferences;
     private static PrefUtility instance = null;
-    
+
+    /**
+     * Handles the creation of a singleton object
+     *
+     * @return The PrefUtility object
+     */
     public static PrefUtility getInstance(){
         if(instance == null)
             instance = new PrefUtility();
         return instance;
     }
-    
-    public PrefUtility(){
+
+    private PrefUtility(){
         preferences = Preferences.userRoot().node("JNotepadPreferences");
     }
     
